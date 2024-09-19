@@ -2,12 +2,23 @@ public abstract  class  Videojuego{
     private String titulo;
      private String consola;
      private double precioBase;
-     private  String genero
-    public Videojuego(String titulo, String consola, double precioBase) {
+     private  Genero genero;
+    public Videojuego(String titulo, String consola, double precioBase,Genero genero) {
         this.titulo = titulo;
         this.consola = consola;
         this.precioBase = precioBase;
+        this.genero = genero;
     }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
 
@@ -50,7 +61,8 @@ public abstract  class  Videojuego{
             Videojuego v = (Videojuego) o;
             testOK = this.titulo == v.titulo
                     && this.consola == v.consola
-                    && this.precioBase == v.precioBase;
+                    && this.precioBase == v.precioBase
+                    && this.genero == v.genero;
         }
         return testOK;
     }
@@ -61,7 +73,7 @@ public abstract  class  Videojuego{
 
     @Override
     public String toString() {
-        return String.format("VideoJuego: %s%n Consola: %s%n Precio: %s%n", titulo, consola, precioBase);
+        return String.format("VideoJuego: %s%nGenero: %s%nConsola: %s%nPrecio: %s%n", titulo, genero,consola, precioBase);
     }
 }
 

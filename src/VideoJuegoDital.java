@@ -1,7 +1,7 @@
 public  class VideoJuegoDital extends Videojuego {
     private double  descuento = 0.20;
-    public VideoJuegoDital(String titulo, String consola, double precioBase) {
-        super(titulo, consola, precioBase);
+    public VideoJuegoDital(String titulo, String consola, double precioBase,Genero genero) {
+        super(titulo, consola, precioBase,genero);
     }
 
     @Override
