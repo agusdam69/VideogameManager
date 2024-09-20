@@ -10,7 +10,9 @@ public abstract  class  Videojuego{
         this.genero = genero;
     }
 
+
     public void setGenero(Genero genero) {
+
         this.genero = genero;
     }
 
@@ -36,7 +38,9 @@ public abstract  class  Videojuego{
         return consola;
     }
 
+
     public void setPrecioBase(double precioBase) {
+
         this.precioBase = precioBase;
     }
 

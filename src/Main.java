@@ -5,6 +5,8 @@ import java.util.List;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        System.out.println("JUEGOTI CHULIPINTSTICO");
+        System.out.println("======================");
         VideoJuegoFisico vf = new VideoJuegoFisico("CS", "PS5", 20, Genero.ACCION);
         double precioFinal = vf.calcularPrecioFinal();
         System.out.println(vf);
