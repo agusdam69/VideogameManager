@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public abstract  class  Videojuego{
     private String titulo;
      private String consola;
@@ -70,9 +72,10 @@ public abstract  class  Videojuego{
         }
         return testOK;
     }
+
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(titulo, consola, precioBase, genero);
     }
 
     @Override

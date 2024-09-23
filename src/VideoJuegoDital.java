@@ -6,7 +6,7 @@ public  class VideoJuegoDital extends Videojuego {
 
     @Override
     public double calcularPrecioFinal() {
-        return getPrecioBase() * descuento;
+        return getPrecioBase()-(getPrecioBase() * descuento);
     }
 
 }
