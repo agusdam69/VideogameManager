@@ -4,7 +4,7 @@ import java.util.List;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JuegoNoCompatibleException {
 //        System.out.println("JUEGOTI CHULIPINTSTICO");
 //        System.out.println("======================");
 //        VideoJuegoFisico vf = new VideoJuegoFisico("CS", "PS5", 20, Genero.ACCION);
@@ -17,5 +17,8 @@ public class Main {
 //        System.out.println(vd);
 //        System.out.println("Precio con descuento de vip Digital= " + precioFinal2);
 
+        Consola c = new Consola("Wukong",20,Genero.ACCION,Plataforma.Playstation);
+        c.instalar();
+        System.out.println(c);
     }
 }

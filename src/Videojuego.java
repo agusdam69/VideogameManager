@@ -1,27 +1,26 @@
-import java.io.Console;
 import java.util.Objects;
 
-public abstract  class  Videojuego implements IConsole {
+public abstract class Videojuego implements IConsole {
 
     private String titulo;
-     private String consola;
      private double precioBase;
      private  Genero genero;
-     private Plataforma plataforma;
-    public Videojuego(String titulo, String consola, double precioBase,Genero genero,Plataforma plataforma) {
+       Plataforma plataforma;
+    public Videojuego(String titulo, double precioBase,Genero genero, Plataforma plataforma) {
         this.titulo = titulo;
-        this.consola = consola;
+
         this.precioBase = precioBase;
         this.genero = genero;
         this.plataforma = plataforma;
-    }
 
-    public void setPlataforma(Plataforma plataforma) {
-        this.plataforma = plataforma;
     }
 
     public Plataforma getPlataforma() {
         return plataforma;
+    }
+
+    public void setPlataforma(Plataforma plataforma) {
+        this.plataforma = plataforma;
     }
 
     public void setGenero(Genero genero) {
@@ -43,13 +42,7 @@ public abstract  class  Videojuego implements IConsole {
         return titulo;
     }
 
-    public void setConsola(String consola) {
-        this.consola = consola;
-    }
 
-    public String getConsola() {
-        return consola;
-    }
 
 
     public void setPrecioBase(double precioBase) {
@@ -76,21 +69,24 @@ public abstract  class  Videojuego implements IConsole {
         } else {
             Videojuego v = (Videojuego) o;
             testOK = this.titulo == v.titulo
-                    && this.consola == v.consola
                     && this.precioBase == v.precioBase
-                    && this.genero == v.genero;
+                    && this.genero == v.genero
+                    && this.getPlataforma() == v.getPlataforma();
         }
         return testOK;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(titulo, consola, precioBase, genero);
+        return Objects.hash(titulo, precioBase, genero,getPlataforma());
     }
 
     @Override
     public String toString() {
-        return String.format("VideoJuego: %s%nGenero: %s%nConsola: %s%nPrecio: %s%n", titulo, genero,consola, precioBase);
+        return String.format("VideoJuego: " + titulo,
+                "Genero: " + genero,
+                "Consola: " + getPlataforma(),
+                "Precio: ", + precioBase);
     }
 }
 

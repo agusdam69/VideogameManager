@@ -2,8 +2,8 @@ import java.io.Console;
 
 public  class VideoJuegoDital extends Videojuego {
     private double  descuento = 0.20;
-    public VideoJuegoDital(String titulo, String consola, double precioBase,Genero genero) {
-        super(titulo, consola, precioBase,genero);
+    public VideoJuegoDital(String titulo,  double precioBase,Genero genero,Plataforma plataforma) {
+        super(titulo,  precioBase,genero,plataforma);
     }
 
     @Override
@@ -11,10 +11,7 @@ public  class VideoJuegoDital extends Videojuego {
         return getPrecioBase()-(getPrecioBase() * descuento);
     }
     private String plataformaCompatible;
-    @Override
-    public boolean isCompatible(IConsole console) {
-        return console.getPlataforma().equals(plataformaCompatible);
-    }
+
 
     @Override
     public void encender() {
@@ -27,7 +24,7 @@ public  class VideoJuegoDital extends Videojuego {
     }
 
     @Override
-    public void instalar() throws JuegoNoCompatibleException {
+    public void instalar(Videojuego game) throws JuegoNoCompatibleException {
 
     }
 
@@ -36,8 +33,5 @@ public  class VideoJuegoDital extends Videojuego {
 
     }
 
-    @Override
-    public String getPlataforma() {
-        return "";
-    }
+
 }

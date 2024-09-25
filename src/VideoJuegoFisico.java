@@ -2,8 +2,8 @@ import java.io.Console;
 
 public class VideoJuegoFisico extends Videojuego{
     private double envio = 5;
-    VideoJuegoFisico(String titulo, String consola, double precioBase,Genero genero) {
-        super(titulo, consola, precioBase,genero);
+    VideoJuegoFisico(String titulo,  double precioBase,Genero genero,Plataforma plataforma) {
+        super(titulo,  precioBase,genero,plataforma);
         this.envio = envio;
     }
     private String plataformaCompatible;
@@ -11,20 +11,6 @@ public class VideoJuegoFisico extends Videojuego{
     public  double calcularPrecioFinal() {
         return  getPrecioBase() + envio;
     }
-
-    @Override
-    public boolean isCompatible(IConsole console) {
-        return console.getPlataforma().equals(plataformaCompatible);
-    }
-
-
-
-
-
-
-
-
-
 
     @Override
     public void encender() {
@@ -37,7 +23,7 @@ public class VideoJuegoFisico extends Videojuego{
     }
 
     @Override
-    public void instalar() throws JuegoNoCompatibleException {
+    public void instalar(Videojuego game) throws JuegoNoCompatibleException {
 
     }
 
@@ -46,8 +32,5 @@ public class VideoJuegoFisico extends Videojuego{
 
     }
 
-    @Override
-    public String getPlataforma() {
-        return "";
-    }
+
 }
