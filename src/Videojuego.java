@@ -1,17 +1,28 @@
+import java.io.Console;
 import java.util.Objects;
 
-public abstract  class  Videojuego{
+public abstract  class  Videojuego implements IConsole {
+
     private String titulo;
      private String consola;
      private double precioBase;
      private  Genero genero;
-    public Videojuego(String titulo, String consola, double precioBase,Genero genero) {
+     private Plataforma plataforma;
+    public Videojuego(String titulo, String consola, double precioBase,Genero genero,Plataforma plataforma) {
         this.titulo = titulo;
         this.consola = consola;
         this.precioBase = precioBase;
         this.genero = genero;
+        this.plataforma = plataforma;
     }
 
+    public void setPlataforma(Plataforma plataforma) {
+        this.plataforma = plataforma;
+    }
+
+    public Plataforma getPlataforma() {
+        return plataforma;
+    }
 
     public void setGenero(Genero genero) {
 
@@ -52,7 +63,6 @@ public abstract  class  Videojuego{
     }
 
     public abstract double calcularPrecioFinal();
-
 
     @Override
     public boolean equals(Object o) {

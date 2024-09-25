@@ -16,8 +16,6 @@ public class Main {
 //        double precioFinal2 = vd.calcularPrecioFinal();
 //        System.out.println(vd);
 //        System.out.println("Precio con descuento de vip Digital= " + precioFinal2);
-            PlayStation playStation = new PlayStation();
-            playStation.instalar();
-        System.out.println();
+
     }
 }
