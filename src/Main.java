@@ -17,8 +17,9 @@ public class Main {
 //        System.out.println(vd);
 //        System.out.println("Precio con descuento de vip Digital= " + precioFinal2);
 
-        Consola c = new Consola("Wukong",20,Genero.ACCION,Plataforma.Playstation);
-        c.instalar();
+        Consola c = new Consola(Plataforma.Playstation);
+        VideoJuegoFisico vf = new VideoJuegoFisico("wukong",20,Genero.ACCION,Plataforma.Playstation);
+        c.instalar(vf);
         System.out.println(c);
     }
 }
